@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import Paper from './representational/Paper';
 import paper from '../assests/paper';
 import PaperList from './lists/PaperList';
+import NewPaper from './representational/NewPaper';
+// import { Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 
 
 class MainComponent extends Component{
@@ -59,17 +62,27 @@ class MainComponent extends Component{
   }
 
   
-  return(
+  return (
     <div className="App">
-
-    <h1>Paper List</h1>
-
-   
-    {papers}
-
-    <button onClick={this.hideAllPaper}>Hide All Paper</button>
+      <div className='nav-bar'>
+        <ul>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/new-paper">New Book</NavLink></li>
+        </ul>
+      </div>
+  
+      <Routes>
+      <Route path="/" element={papers} /> {/* Correctly using papers */}
+      <Route path="/new-paper" element={<NewPaper />} />
+    </Routes>
     </div>
+    
+    //  {papers}
+
+    // <NewPaper />
+
   );
+  
   
   }
 

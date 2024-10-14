@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import Person from './components/Person';
 import Paper from './components/representational/Paper';
 import MainComponent from './components/MainComponent';
+import {BrowserRouter} from 'react-router-dom';
 
 // Functional Component
 // function App() {
@@ -177,7 +178,11 @@ import MainComponent from './components/MainComponent';
 //}
 
 const App = () =>{
-  return <MainComponent/>
+  return(
+    <BrowserRouter>
+      <MainComponent/>
+    </BrowserRouter>
+  ); 
 }
       
 
